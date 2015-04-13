@@ -1,0 +1,15 @@
+# vim: set ft=conf:
+
+update () {
+    sudo yum clean all && sudo yum update && date  > ~/.lastupdate
+}
+
+# Thanks,
+# http://lukas.zapletalovi.com/2011/06/my-yum-aliases.html
+alias ycu='yum check-update'
+alias syi='sudo yum install'
+alias yp='yum provides'
+alias ypw='yum provides $(which $1)'
+alias syr='sudo yum remove'
+alias ys='yum search'
+alias syu='sudo yum update'

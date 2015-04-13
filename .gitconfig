@@ -1,0 +1,23 @@
+[user]
+    email = ag@antoniogurgel.com
+    name = Antonio Gurgel
+[color]
+    ui = auto
+[push]
+    default = matching
+[alias]
+    a = add -v
+    aa = add -v .
+    aaa = add -Av .
+    c = commit
+    cm = commit -m
+    rv = remote -v
+    st = status
+    ps = push
+    pupm = pull upstream master
+    pom = push origin master
+    phm = push heroku master
+[core]
+    excludesfile = ~/.gitignore_global
+[github]
+    user = GA114

@@ -1,0 +1,82 @@
+# vim: set ft=sh et:
+
+# Editing this file. TODO: visudo-like capability?
+alias aliases='vim $HOME/.aliases && source $HOME/.aliases && echo "Good to go."'
+
+# Distro-specific aliases, which dotfiles_import.sh should have copied to $HOME.
+source $HOME/.aliases-dist
+
+# $SHELL is the default login shell, which on some machines is /bin/bash and
+# doesn't change even if I start zsh.
+if [ -n $ZSH_NAME ]; then
+    source $HOME/.aliases-zsh
+fi
+
+# System tools
+alias dmt='dmesg | tail -n 20'
+alias goodbye='sudo shutdown -h now'
+alias jl='jobs -l'
+alias m='mount'
+alias sm='sudo mount -v'
+alias um='sudo umount -v'
+alias sc='systemctl'
+alias ssc='sudo systemctl'
+alias sv='sudo rvim'
+
+# Safety nets
+alias rm='rm -vI --preserve-root'
+alias mv='mv -vi'
+alias cp='cp -vi'
+alias ln='ln -vi'
+alias chown='chown -v --preserve-root'
+alias chmod='chmod -v --preserve-root'
+alias chgrp='chgrp -v --preserve-root'
+alias wget='wget -c'
+
+# Quick-add alias
+qaa () {
+    echo "alias $1" >> $HOME/.aliases;
+    source $HOME/.aliases;
+    echo "$1 added.";
+}
+
+# Rename a terminal window. Works for me on zsh and urxvt{d,c}.
+retitle() {
+    echo -n "\033]0;$1\007";
+    echo "Terminal window renamed to $1."
+}
+
+# I like my lists pretty
+alias l='ls -F --color'
+alias la='l -A'        # omits implicit "." and ".."
+alias ll='l -lh'       # long list, human readable sizes 
+alias lla='l -Alh'     # long list, human readable sizes, dotfiles
+alias lr='l -R'        # recursive list
+alias lsdir='ls -F | grep / --color=never' # ls dirs
+alias llf='ll | grep -v / --color=never'   # ls -l files
+alias lld='ll | grep / --color=never'      # ls -l dirs
+
+# I like my grep pretty
+alias grep='grep --color=auto'
+alias grepc='grep --color=never'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+# oh-my-zsh/plugins/common-aliases
+alias sgrep='grep -RnHC 5 --exclude-dir={.git,.svn,CVS}'
+
+# Disk usage
+alias f='df -HT'  # Sizes in SI units (MB, etc.) plus fstype
+alias u='du -ch'
+    # Total at bottom, SI units
+alias u1='du -chd 1' 
+    # Total at bottom, SI units, group by folder
+alias u1s='du -chd 1 | sort -hr' 
+    # Total at bottom, SI units, group by folder, sort by size
+
+# Miscellanea
+alias g=hub
+alias t=todo
+alias tarhelp='tar --help | less'
+wc-r () { # wc if it had a recursive flag.
+    find "$@" -type f | xargs wc -l
+}

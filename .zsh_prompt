@@ -1,0 +1,17 @@
+# vim: set ft=sh:
+# TODO
+# Git status, branch
+
+# All syntax here explained in chapter 13 of the zsh manual.
+# http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+
+# Thanks to oh-my-zsh/themes/gallifrey for return code idea.
+local return_code="%(?..%F{red}%? ↵%f)"
+local hostname="%F{green}%m%f"
+# Time, history number, directory, background jobs.
+local stats="%T %h %F{yellow}%~%f%F{blue}%1(j. %j.)%f"
+# Red hash if uid=0, foreground-color percent otherwise.
+local root_status="%(!.%F{red}#%f.%%)"
+
+PROMPT="${hostname} [${stats}] ${root_status} "
+RPROMPT="${return_code}"

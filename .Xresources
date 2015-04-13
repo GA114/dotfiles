@@ -1,0 +1,26 @@
+! URxvt.font: xft:terminus:size=9
+URxvt.font: xft:Inconsolata:size=10
+URxvt.savelines: 65535
+URxvt.scrollBar: false
+URxvt.scrollWithBuffer: false
+*.background: #000000
+*.foreground: #aaaaaa
+*.color0:  #000000
+*.color1:  #ff0000
+*.color2:  #00ff00
+*.color3:  #ffff00
+*.color4:  #0060ff
+*.color5:  #ff00ff
+*.color6:  #00ffff
+*.color7:  #cecece
+*.color8:  #505050
+*.color9:  #ce0000
+*.color10: #00ce00
+*.color11: #cece00
+*.color12: #0060ce
+*.color13: #ce00ce
+*.color14: #00cece
+*.color15: #ffffff
+*.colorIT: #ffffff
+*.colorBD: #ffffff
+

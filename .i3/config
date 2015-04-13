@@ -1,0 +1,143 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod1
+
+# --no-startup-id fixes the i3 waiting cursor problem.
+set $ensi exec --no-startup-id
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Icons 8, Terminus 8
+
+# AUTOSTART TODO: should this be in i3 or in xinitrc?
+$ensi urxvtd
+$ensi dropbox
+$ensi parcellite
+
+# F-KEY SHORTCUTS
+bindsym $mod+F2 exec firefox
+bindsym $mod+F3 exec urxvt -e ranger
+bindsym $mod+F4 exec urxvt -e htop
+
+# Toggle bar visibility (M-b clobbers readline)
+bindsym $mod+a bar mode toggle
+
+# Use Mouse1+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+bindsym $mod+Return exec urxvtc
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+d $ensi dmenu_run -b
+
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Ships with $mod+f, which, if used with $mod=Alt,
+# clobbers GNU readline's M-f (forward one word).
+bindsym $mod+Shift+f fullscreen
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Shift+c focus parent
+bindsym $mod+c focus child
+
+# http://i3wm.org/docs/userguide.html#_changing_named_workspaces_moving_to_workspaces
+# Maybe when this doesn't crash i3 every time I use it, I'll try it again...
+# bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'rename workspace to: '
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+t restart
+bindsym $mod+Shift+e $ensi "i3-nagbar -m '?' -t warning -b 'Exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym $mod+r mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Thanks, ArchWiki, for power mappings.
+# https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
+set $lock i3lock -c 000000 -p default && sleep 1
+
+mode "power" {
+    bindsym Shift+l $ensi $lock, mode "default"
+    bindsym Shift+s $ensi $lock && systemctl suspend, mode "default"
+    bindsym Shift+h $ensi $lock && systemctl hibernate, mode "default"
+    bindsym Shift+r $ensi systemctl reboot, mode "default"
+    bindsym Shift+p $ensi systemctl poweroff, mode "default"
+
+    bindsym $mod+Shift+p mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+p mode "power"
+
+# Media controls
+bindsym XF86AudioRaiseVolume $ensi "amixer sset Master 5%+"
+bindsym XF86AudioLowerVolume $ensi "amixer sset Master 5%-"
+bindsym XF86AudioMute $ensi "amixer sset Master toggle"
+
+bar {
+    status_command i3status
+}

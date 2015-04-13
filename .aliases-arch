@@ -1,0 +1,34 @@
+# vim: set ft=sh et:
+
+# Update Arch Linux system.
+# TODO: One of these days, I'll find a way to incorporate time-since-last-update functionality
+# and have the system bug me with a console message or something when more than a set time
+# has passed. This might a cron/systemd job....
+update() {
+    sudo reflector --verbose -a 24 -c 'United States' -p http --sort rate -l 30 --save /etc/pacman.d/mirrorlist;
+    yaourt -Syyua || sudo pacman -Syyu;
+    date > ~/.lastupdate
+}
+
+##### Pacman #####
+# https://wiki.archlinux.org/index.php/Pacman_Tips
+alias pss='pacman -Ss'                                # Search
+alias spsyyu='sudo pacman -Syyu'                      # Update, forcing package list refresh
+alias sps='sudo pacman -S --needed'                   # Install
+alias spsr='sudo pacman -S'                           # Install, forcing reinstallation of already-installed packages
+alias spu='sudo pacman -U'                            # Install from file
+alias spr='sudo pacman -R'                            # Remove package
+alias sprns='sudo pacman -Rns'                        # Remove package, configurations, and unneeded dependencies
+alias spsyy='sudo pacman -Syy'                        # Force package list refresh
+alias pqdt='pacman -Qdt'                              # List orphaned dependencies
+alias pq='pacman -Q'                                  # List installed packages
+pqiim() {pacman -Qii | awk '/^MODIFIED/ {print $2}';} # List modified config files
+alias pqm='pacman -Qm'                                # List foreign packages (add -e for explicitly-installed)
+alias pqne='pacman -Qn'                               # List native packages (idem)
+cleanup() {sudo pacman -Rns $(pacman -Qdtq);}         # Clean up orphaned dependencies
+
+# TODO: Learn to use flags in shell scripts
+
+##### Yaourt #####
+alias ys='yaourt -S'            # Install AUR packages
+alias yss='yaourt -Ss'            # Search AUR packages

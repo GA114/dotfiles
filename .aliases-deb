@@ -1,0 +1,11 @@
+# vim: set ft=sh:
+
+update () {
+    sudo apt-get update && sudo apt-get upgrade && date  > ~/.lastupdate
+}
+
+alias sagi='sudo apt-get install'
+alias sagr='sudo apt-get remove'
+alias sagp='sudo apt-get purge'
+alias sagu='sudo apt-get update'
+alias saga='sudo apt-get autoremove'

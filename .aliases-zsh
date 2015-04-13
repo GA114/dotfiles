@@ -1,0 +1,26 @@
+# vim: set ft=sh et:
+
+alias zshrc='vim ~/.zshrc && source ~/.zshrc && echo "Good to go."'
+
+# Command line head / tail shortcuts
+# oh-my-zsh/plugins/common-aliases
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L='| less'
+alias -g M='| most'
+alias -g LL='2>&1 | less'
+alias -g CA='2>&1 | cat -A'
+alias -g NE='2> /dev/null'
+alias -g NUL='> /dev/null 2>&1'
+
+# Like "sudo !!" but lazier.
+# oh-my-zsh/plugin/sudo
+sudo-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    [[ $BUFFER != sudo\ * ]] && LBUFFER="sudo $LBUFFER"
+}
+zle -N sudo-command-line
+# [Esc] [S] [Esc]
+bindkey "\es\e" sudo-command-line
+
