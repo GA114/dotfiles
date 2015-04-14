@@ -3,7 +3,7 @@
 # Symlink dotfiles from the Git repo to $HOME, where they can
 # be used at will by applications that need them.
 
-if [ $(basename .) != "dotfiles" ] || [ -d dotfiles ] ; then
+if [ $(basename $PWD) != "dotfiles" ] || [ -d dotfiles ] ; then
     echo "This script is meant to be run inside ./dotfiles."
     exit
 fi
@@ -12,13 +12,13 @@ fi
 # Idea gronked from edunham/dotfiles.
 for i in .[^.ag]*
 do
-    ln -vs $i $HOME
+    ln -vs $HOME/dotfiles/$i $HOME
 done
 
 # Link CERTAIN .a* and .g* files.
-ln -vs .aliases $HOME
-ln -vs .gitignore_global $HOME
-ln -vs .gitconfig $HOME
+ln -vs $HOME/dotfiles/.aliases $HOME
+ln -vs $HOME/dotfiles/.gitignore_global $HOME
+ln -vs $HOME/dotfiles/.gitconfig $HOME
 
 # Sometimes I have to force names: "NAME=Fedora ./dotfiles/dotfiles_import.sh"
 if [ -z "$NAME" ]; then  
@@ -48,8 +48,10 @@ case "$NAME" in
         ;;
 esac
 
-ln -vs .aliases-$DIST $HOME/.aliases-dist
+ln -vs $HOME/dotfiles/.aliases-$DIST $HOME
 
-source .zshrc
+
+# source .zshrc # Throws errors 
+echo "Now source .zshrc."
 
 exit 0
