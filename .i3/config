@@ -17,8 +17,9 @@ $ensi parcellite
 
 # F-KEY SHORTCUTS
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec urxvt -e ranger
-bindsym $mod+F4 exec urxvt -e htop
+bindsym $mod+F3 exec chromium
+bindsym $mod+F4 exec urxvt -e ranger
+bindsym $mod+F5 exec urxvt -e htop
 
 # Toggle bar visibility (M-b clobbers readline)
 bindsym $mod+a bar mode toggle
