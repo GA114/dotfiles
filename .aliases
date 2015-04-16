@@ -76,6 +76,7 @@ alias u1s='du -chd 1 | sort -hr'
 # Miscellanea
 alias g=hub
 alias t=todo
+alias rdp=rdesktop
 alias tarhelp='tar --help | less'
 wc-r () { # wc if it had a recursive flag.
     find "$@" -type f | xargs wc -l

@@ -3,7 +3,7 @@
 # Symlink dotfiles from the Git repo to $HOME, where they can
 # be used at will by applications that need them.
 
-if [ $(basename .) != "dotfiles" ] || [ -d dotfiles ] ; then
+if [ $(basename $PWD) != "dotfiles" ] || [ -d dotfiles ] ; then
     echo "This script is meant to be run inside ./dotfiles."
     exit
 fi
