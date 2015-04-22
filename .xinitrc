@@ -18,9 +18,10 @@ xmodmap ~/.xmodmaprc
 
 xrdb -load ~/.Xresources
 
-# Start i3 and log to ~/.i3/logfile
-echo "Starting at $(date)" >> /tmp/.i3.log-$(date +'%F-%k-%M-%S') 2>&1
-exec /usr/bin/i3 -V >> /tmp/.i3.log-$(date +'%F-%k-%M-%S') 2>&1
+# Start i3 and log to /tmp/.i3.log
+# tmp used because /var/log belongs to root
+echo "Log begins $(date)" >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
+exec /usr/bin/i3 -V >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
 # For debugging, uncomment below
 #exec /usr/bin/i3 -V -d all >> /tmp/.i3.log-$(date +'%F-%k-%M-%S') 2>&1
 

@@ -48,7 +48,7 @@ case "$NAME" in
         ;;
 esac
 
-ln -vs $HOME/dotfiles/.aliases-$DIST $HOME
+ln -vs $HOME/dotfiles/.aliases-$DIST $HOME/.aliases-dist
 
 
 # source .zshrc # Throws errors 

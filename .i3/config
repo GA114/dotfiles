@@ -13,6 +13,7 @@ font pango:Icons 8, Terminus 8
 # AUTOSTART TODO: should this be in i3 or in xinitrc?
 $ensi urxvtd
 $ensi dropbox
+$ensi syndaemon -i .15 -d
 $ensi parcellite
 
 # F-KEY SHORTCUTS
@@ -138,6 +139,7 @@ bindsym $mod+Shift+p mode "power"
 bindsym XF86AudioRaiseVolume $ensi "amixer sset Master 5%+"
 bindsym XF86AudioLowerVolume $ensi "amixer sset Master 5%-"
 bindsym XF86AudioMute $ensi "amixer sset Master toggle"
+bindsym XF86Battery $ensi "xset dpms force off"
 
 bar {
     status_command i3status
