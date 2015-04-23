@@ -6,7 +6,7 @@
 # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
 
 # Thanks to oh-my-zsh/themes/gallifrey for return code idea.
-local return_code="%(?..%F{red}%? ↵%f)"
+local return_code="%(?..%F{red}%?%f)"
 local hostname="%F{green}%m%f"
 # Time, history number, directory, background jobs.
 local stats="%T %h %F{yellow}%~%f%F{blue}%1(j. %j.)%f"

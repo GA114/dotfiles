@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Symlink dotfiles from the Git repo to $HOME, where they can
 # be used at will by applications that need them.
@@ -22,7 +22,7 @@ ln -vs .gitconfig $HOME
 
 # Sometimes I have to force names: "NAME=Fedora ./dotfiles/dotfiles_import.sh"
 if [ -z "$NAME" ]; then  
-    source /etc/os-release
+    source /etc/os-release 2>/dev/null
     if [ $? != 0 ] ; then 
         NAME=$(uname -a)
     fi
