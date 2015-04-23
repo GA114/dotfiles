@@ -2,6 +2,7 @@
 URxvt.font: xft:Inconsolata:size=10
 URxvt.savelines: 65535
 URxvt.scrollBar: false
+URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: false
 *.background: #000000
 *.foreground: #aaaaaa

@@ -9,7 +9,7 @@ HISTFILE=$HOME/.zsh_hist
 SAVEHIST=10000
 HISTSIZE=10000
 
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$HOME/bin:$PATH"
 
 bindkey -e
 
