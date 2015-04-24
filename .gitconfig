@@ -11,6 +11,7 @@
     aaa = add -Av .
     c = commit
     cm = commit -m
+    dh = diff HEAD
     rv = remote -v
     st = status
     ps = push

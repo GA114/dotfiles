@@ -15,7 +15,6 @@ set encoding=utf-8
 set number
 set nohlsearch
 
-
 " Shift key compensation
 command WQ wq
 command Wq wq

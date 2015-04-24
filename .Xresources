@@ -1,5 +1,6 @@
-! URxvt.font: xft:terminus:size=9
-URxvt.font: xft:Inconsolata:size=10
+! Set font in .Xresources.local
+!URxvt.font: xft:terminus:size=9
+!URxvt.font: xft:Inconsolata:size=10
 URxvt.savelines: 65535
 URxvt.scrollBar: false
 URxvt.scrollTtyOutput: false

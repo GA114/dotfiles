@@ -16,14 +16,11 @@ setxkbmap -option terminate:ctrl_alt_bksp
 
 xmodmap ~/.xmodmaprc
 
-xrdb -load ~/.Xresources
+xrdb ~/.Xresources
+xrdb -merge ~/.Xresources.local
 
-# Start i3 and log to /tmp/.i3.log
-# tmp used because /var/log belongs to root
-echo "Log begins $(date)" >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
-exec /usr/bin/i3 -V >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
-# For debugging, uncomment below
-#exec /usr/bin/i3 -V -d all >> /tmp/.i3.log-$(date +'%F-%k-%M-%S') 2>&1
+# echo "Log begins $(date)" >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
+exec /usr/bin/i3 # -V -d all >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
 
 # exec gnome-session
 # exec startkde
