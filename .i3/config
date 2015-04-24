@@ -140,6 +140,7 @@ bindsym XF86AudioRaiseVolume $ensi "amixer sset Master 5%+"
 bindsym XF86AudioLowerVolume $ensi "amixer sset Master 5%-"
 bindsym XF86AudioMute $ensi "amixer sset Master toggle"
 bindsym XF86Battery $ensi "xset dpms force off"
+bindsym Print $ensi "scrot"
 
 bar {
     status_command i3status

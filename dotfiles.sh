@@ -51,7 +51,6 @@ esac
 ln -vs $HOME/dotfiles/.aliases-$DIST $HOME/.aliases-dist
 
 
-# source .zshrc # Throws errors 
-echo "Now source .zshrc."
+source .zshrc
 
 exit 0

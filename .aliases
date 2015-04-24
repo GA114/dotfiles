@@ -12,6 +12,10 @@ if [ -n $ZSH_NAME ]; then
     source $HOME/.aliases-zsh
 fi
 
+alias fuck='$(thefuck $(fc -ln -1))'
+alias argh=fuck
+alias asdf=fuck
+
 # System tools
 alias dmt='dmesg | tail -n 20'
 alias goodbye='sudo shutdown -h now'

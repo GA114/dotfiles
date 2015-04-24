@@ -32,3 +32,4 @@ cleanup() {sudo pacman -Rns $(pacman -Qdtq);}         # Clean up orphaned depend
 ##### Yaourt #####
 alias ys='yaourt -S'            # Install AUR packages
 alias yss='yaourt -Ss'            # Search AUR packages
+
