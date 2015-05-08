@@ -15,6 +15,7 @@ fi
 alias fuck='$(thefuck $(fc -ln -1))'
 alias argh=fuck
 alias asdf=fuck
+export THEFUCK_REQUIRE_CONFIRMATION=true
 
 # System tools
 alias dmt='dmesg | tail -n 20'
@@ -25,6 +26,7 @@ alias sc='systemctl'
 alias sm='sudo mount -v'
 alias ssc='sudo systemctl'
 alias sv='sudo rvim'
+alias svim='sudo rvim'
 alias um='sudo umount -v'
 
 # Safety nets
@@ -75,14 +77,13 @@ alias u='du -ch'
     # Total at bottom, SI units
 alias u1='du -chd 1' 
     # Total at bottom, SI units, group by folder
-alias u1s='du -chd 1 | sort -hr' 
-    # Total at bottom, SI units, group by folder, sort by size
 
 # Miscellanea
 alias g=hub
 alias t=todo
 alias rdp=rdesktop
 alias tarhelp='tar --help | less'
-wc-r () { # wc if it had a recursive flag.
+alias screenshot=scrot
+wc-r () { # wc if it had a recursive flag. FIXME: Breaks with spaced filenames
     find "$@" -type f | xargs wc -l
 }
