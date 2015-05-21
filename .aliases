@@ -3,8 +3,13 @@
 # Editing this file. TODO: visudo-like capability?
 alias aliases='vim $HOME/.aliases && source $HOME/.aliases && echo "Good to go."'
 
-# Distro-specific aliases, which dotfiles_import.sh should have copied to $HOME.
-source $HOME/.aliases-dist
+# Distro- and machine-specific aliases, the former of which dotfiles_import.sh should have copied to $HOME.
+if [ -r $HOME/.aliases-dist ]; then
+    source $HOME/.aliases-dist
+fi
+if [ -r $HOME/.aliases-local ]; then
+    source $HOME/.aliases-local
+fi
 
 # $SHELL is the default login shell, which on some machines is /bin/bash and
 # doesn't change even if I start zsh.
@@ -28,6 +33,7 @@ alias ssc='sudo systemctl'
 alias sv='sudo rvim'
 alias svim='sudo rvim'
 alias um='sudo umount -v'
+alias dix='dig -x'
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'

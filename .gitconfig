@@ -1,6 +1,6 @@
 [user]
-    email = ag@antoniogurgel.com
     name = Antonio Gurgel
+    email = (nope) # I alternate between personal and work emails
 [color]
     ui = auto
 [push]
@@ -10,14 +10,15 @@
     aa = add -v .
     aaa = add -Av .
     c = commit
+    co = checkout
     cm = commit -m
     dh = diff HEAD
+    dh1 = diff HEAD~1
     rv = remote -v
     st = status
     ps = push
     pupm = pull upstream master
     pom = push origin master
-    phm = push heroku master
 [core]
     excludesfile = ~/.gitignore_global
 [github]

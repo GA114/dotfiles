@@ -6,6 +6,7 @@ URxvt.scrollBar: false
 URxvt.scrollTtyOutput: false
 URxvt.scrollTtyKeypress: true
 URxvt.scrollWithBuffer: false
+URxvt.urgentOnBell: True
 *.background: #000000
 *.foreground: #aaaaaa
 *.color0:  #000000
