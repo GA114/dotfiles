@@ -34,6 +34,8 @@ alias sv='sudo rvim'
 alias svim='sudo rvim'
 alias um='sudo umount -v'
 alias dix='dig -x'
+# http://0pointer.de/blog/projects/systemd-for-admins-2.html
+alias psc='ps xawf -eo pid,user,cgroup,args' 
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'
@@ -42,7 +44,7 @@ alias chown='chown -v --preserve-root'
 alias cp='cp -vi'
 alias ln='ln -vi'
 alias mv='mv -vi'
-alias rm='rm -vI --preserve-root'
+alias rm='rm -vI'
 alias rmdir='rmdir -v'
 alias wget='wget -c'
 
