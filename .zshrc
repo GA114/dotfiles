@@ -9,13 +9,12 @@ HISTFILE=$HOME/.zsh_hist
 SAVEHIST=10000
 HISTSIZE=10000
 
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$HOME/bin:$PATH"
-
 bindkey -e
 
 source ~/.aliases
 source ~/.zsh_prompt
 source ~/.zsh_keymap
+source ~/.zshrc.local
 
 setopt autocd beep notify correct
 export EDITOR=vim

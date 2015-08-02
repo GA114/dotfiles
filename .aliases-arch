@@ -5,6 +5,7 @@
 # and have the system bug me with a console message or something when more than a set time
 # has passed. This might a cron/systemd job....
 update() {
+    echo "Updating...";
     sudo reflector --verbose -a 24 -c 'United States' -p http --sort rate -l 30 --save /etc/pacman.d/mirrorlist;
     yaourt -Syyua || sudo pacman -Syyu;
     date > ~/.lastupdate
