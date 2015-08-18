@@ -23,9 +23,11 @@ command Q q
 
 " Highlight eighty-first column of text
 highlight ColorColumn ctermbg=magenta
-command PP call matchadd('ColorColumn', '\%81v', 100)
-call matchadd('ColorColumn', '\%81v', 100)
+command PP call matchadd('ColorColumn', '\%82v', 100)
+call matchadd('ColorColumn', '\%82v', 100)
 command P call clearmatches()
+
+command C r !parcellite -c
 
 " Tab settings
 set shiftwidth=4

@@ -16,6 +16,7 @@ bindkey -e
 source ~/.aliases
 source ~/.zsh_prompt
 source ~/.zsh_keymap
+source ~/.zsh_local
 
 setopt autocd beep notify correct
 export EDITOR=vim
