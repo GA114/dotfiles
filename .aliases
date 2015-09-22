@@ -3,7 +3,8 @@
 # Editing this file. TODO: visudo-like capability?
 alias aliases='vim $HOME/.aliases && source $HOME/.aliases && echo "Good to go."'
 
-# Distro- and machine-specific aliases, the former of which dotfiles_import.sh should have copied to $HOME.
+# Distro- and machine-specific aliases, the former of which
+# dotfiles_import.sh should have copied to $HOME.
 if [ -r $HOME/.aliases-dist ]; then
     source $HOME/.aliases-dist
 fi
@@ -36,10 +37,11 @@ alias sv='sudo rvim'
 alias svim='sudo rvim'
 alias dix='dig -x'
 alias perms='stat -c "%A %a %n"'
-# http://0pointer.de/blog/projects/systemd-for-admins-2.html
-alias psc='ps xawf -eo pid,user,cgroup,args' 
+alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
 alias hogcpu='ps auxk -%cpu'
 alias hogram='ps auxk -%mem'
+# http://0pointer.de/blog/projects/systemd-for-admins-2.html
+alias psc='ps xawf -eo pid,user,cgroup,args' 
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'

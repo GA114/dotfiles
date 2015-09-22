@@ -7,7 +7,9 @@ set omnifunc=complete#Complete
 colo peachpuff
 scriptencoding utf-8
 set mouse=a
+set backspace=indent,eol,start  " more powerful backspacing
 set nocompatible
+set ruler                       " show the cursor position all the time
 set shell=zsh\ -l
 set modeline
 set modelines=3

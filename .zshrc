@@ -9,8 +9,6 @@ HISTFILE=$HOME/.zsh_hist
 SAVEHIST=10000
 HISTSIZE=10000
 
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$HOME/bin:$PATH"
-
 bindkey -e
 
 source ~/.aliases
@@ -18,6 +16,8 @@ source ~/.zsh_prompt
 source ~/.zsh_keymap
 source ~/.zsh_local
 
-setopt autocd beep notify correct
+setopt autocd nobeep notify correct
 export EDITOR=vim
 export BROWSER=firefox:lynx
+export PATH="$PATH:$HOME/bin"
+[[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
