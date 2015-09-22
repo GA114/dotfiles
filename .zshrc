@@ -20,4 +20,4 @@ source ~/.zsh_local
 
 setopt autocd beep notify correct
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=firefox:lynx
