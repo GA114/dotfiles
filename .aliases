@@ -34,6 +34,8 @@ alias sv='sudo rvim'
 alias svim='sudo rvim'
 alias um='sudo umount -v'
 alias dix='dig -x'
+alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
+
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'

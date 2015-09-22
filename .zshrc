@@ -16,6 +16,8 @@ source ~/.zsh_prompt
 source ~/.zsh_keymap
 source ~/.zshrc.local
 
-setopt autocd beep notify correct
+setopt autocd nobeep notify correct
 export EDITOR=vim
 export BROWSER=firefox
+export PATH="$PATH:$HOME/bin"
+[[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
