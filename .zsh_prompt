@@ -8,8 +8,8 @@
 # Thanks to oh-my-zsh/themes/gallifrey for return code idea.
 local return_code="%(?..%F{red}%?%f)"
 local hostname="%F{green}%m%f"
-# Time, history number, directory, background jobs.
-local stats="%T %h %F{yellow}%~%f%F{blue}%1(j. %j.)%f"
+# Time, directory, background jobs.
+local stats="%T %F{yellow}%~%f%F{blue}%1(j. %j.)%f"
 # Red hash if uid=0, foreground-color percent otherwise.
 local root_status="%(!.%F{red}#%f.%%)"
 
