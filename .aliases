@@ -12,17 +12,7 @@ if [ -r $HOME/.aliases-local ]; then
     source $HOME/.aliases-local
 fi
 
-# $SHELL is the default login shell, which on some machines is /bin/bash and
-# doesn't change even if I start zsh.
-if [ "$ZSH_NAME" = "zsh" ]; then
-    source $HOME/.aliases-zsh
-    alias help=run-help
-fi
-
-alias fuck='$(thefuck $(fc -ln -1))'
-alias argh=fuck
-alias asdf=fuck
-export THEFUCK_REQUIRE_CONFIRMATION=true
+alias ding="echo -ne '\a'"
 
 # System tools
 alias dmt='dmesg | tail -n 20'
@@ -97,9 +87,3 @@ alias g=hub
 alias t=todo
 alias tarhelp='tar --help | less'
 alias screenshot=scrot
-wc-r () { # wc if it had a recursive flag. 
-    # FIXME: Breaks with spaced filenames
-    find "$@" -type f | xargs wc -l
-    # Or this:
-    # find "$@" -print0 | wc -l --files0-from=-
-}
