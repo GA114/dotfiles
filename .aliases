@@ -14,7 +14,7 @@ fi
 
 # $SHELL is the default login shell, which on some machines is /bin/bash and
 # doesn't change even if I start zsh.
-if [ -n $ZSH_NAME ]; then
+if [ "$ZSH_NAME" = "zsh" ]; then
     source $HOME/.aliases-zsh
     alias help=run-help
 fi
