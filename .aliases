@@ -32,6 +32,7 @@ alias hogcpu='ps auxk -%cpu'
 alias hogram='ps auxk -%mem'
 # http://0pointer.de/blog/projects/systemd-for-admins-2.html
 alias psc='ps xawf -eo pid,user,cgroup,args' 
+alias sizereport='du -hd1 2> /dev/null | sort -h > sizereport.txt'
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'
