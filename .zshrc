@@ -16,7 +16,7 @@ source ~/.zsh_prompt
 source ~/.zsh_keymap
 source ~/.zsh_local
 
-setopt autocd nobeep notify correct
+setopt autocd nobeep notify correct noglobdots longlistjobs
 export EDITOR=vim
 export BROWSER=firefox
 export PATH="$PATH:$HOME/bin"
