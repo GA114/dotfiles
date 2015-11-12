@@ -12,7 +12,6 @@ HISTSIZE=10000
 bindkey -e
 
 source ~/.aliases
-source ~/.zsh_aliases
 source ~/.zsh_prompt
 source ~/.zsh_keymap
 source ~/.zsh_local
