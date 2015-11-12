@@ -1,9 +1,26 @@
-execute pathogen#infect()
+" Required for Vundle
+set nocompatible
+filetype off
+
+" rtp = runtime path
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+filetype plugin indent on    " required
+
+
 map <C-n> :NERDTreeToggle<CR>
 
+
 syntax on
-filetype plugin indent on
-set omnifunc=complete#Complete
 colo peachpuff
 scriptencoding utf-8
 set mouse=a
@@ -28,8 +45,6 @@ highlight ColorColumn ctermbg=magenta
 command PP call matchadd('ColorColumn', '\%82v', 100)
 call matchadd('ColorColumn', '\%82v', 100)
 command P call clearmatches()
-
-command C r !parcellite -c
 
 " Tab settings
 set shiftwidth=4

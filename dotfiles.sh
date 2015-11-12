@@ -50,6 +50,7 @@ esac
 
 ln -vs $HOME/dotfiles/.aliases-$DIST $HOME/.aliases-dist
 
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 source .zshrc
 

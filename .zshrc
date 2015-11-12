@@ -13,9 +13,11 @@ bindkey -e
 
 source ~/.aliases
 source ~/.zsh_aliases
-source ~/.zsh_prompt
 source ~/.zsh_keymap
 source ~/.zsh_local
+
+# Source prompt only in interactive sessions.
+[[ $- = *i* ]] && source ~/.zsh_prompt
 
 setopt autocd nobeep notify correct
 export EDITOR=vim
