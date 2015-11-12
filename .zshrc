@@ -19,7 +19,7 @@ source ~/.zsh_local
 # Source prompt only in interactive sessions.
 [[ $- = *i* ]] && source ~/.zsh_prompt
 
-setopt autocd nobeep notify correct
+setopt autocd nobeep notify correct noglobdots longlistjobs
 export EDITOR=vim
 export BROWSER=firefox:lynx
 export PATH="$PATH:$HOME/bin"

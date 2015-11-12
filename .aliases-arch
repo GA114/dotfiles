@@ -4,11 +4,12 @@
 # TODO: One of these days, I'll find a way to incorporate time-since-last-update functionality
 # and have the system bug me with a console message or something when more than a set time
 # has passed. This might a cron/systemd job....
+# TODO: Figured it out. In rough pseudo-bash:
+# (date +%s MINUS ~/.lastupdate) -lt (days*24*60*60) || mail -s "Time to update" root
 update() {
-    echo "Updating...";
     sudo reflector --verbose -a 24 -c 'United States' -p http --sort rate -l 30 --save /etc/pacman.d/mirrorlist;
     yaourt -Syyua || sudo pacman -Syyu;
-    date > ~/.lastupdate
+    date +%s > ~/.lastupdate
 }
 
 ##### Pacman #####
@@ -27,8 +28,6 @@ pqiim() {pacman -Qii | awk '/^MODIFIED/ {print $2}';} # List modified config fil
 alias pqm='pacman -Qm'                                # List foreign packages (add -e for explicitly-installed)
 alias pqne='pacman -Qn'                               # List native packages (idem)
 cleanup() {sudo pacman -Rns $(pacman -Qdtq);}         # Clean up orphaned dependencies
-
-# TODO: Learn to use flags in shell scripts
 
 ##### Yaourt #####
 alias ys='yaourt -S'            # Install AUR packages
