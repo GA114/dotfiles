@@ -21,7 +21,7 @@ xrdb -merge ~/.Xresources.local
 
 [ -x ~/.xinitrc.local ] && . ~/.xinitrc.local
 
-exec /usr/bin/i3 # -V -d all >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
+exec ssh-agent /usr/bin/i3 # -V -d all >> /tmp/i3.log-$(date +'%F-%k-%M-%S') 2>&1
 
 # exec gnome-session
 # exec startkde
