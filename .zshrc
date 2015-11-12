@@ -12,12 +12,13 @@ HISTSIZE=10000
 bindkey -e
 
 source ~/.aliases
+source ~/.zsh_aliases
 source ~/.zsh_prompt
 source ~/.zsh_keymap
 source ~/.zsh_local
 
 setopt autocd nobeep notify correct noglobdots longlistjobs
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=firefox:lynx
 export PATH="$PATH:$HOME/bin"
 [[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)

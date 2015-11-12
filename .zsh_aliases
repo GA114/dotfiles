@@ -1,6 +1,7 @@
 # vim: set ft=sh et:
 
 alias zshrc='vim ~/.zshrc && source ~/.zshrc && echo "Good to go."'
+alias help=run-help
 
 # Command line head / tail shortcuts
 # oh-my-zsh/plugins/common-aliases

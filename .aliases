@@ -12,35 +12,29 @@ if [ -r $HOME/.aliases-local ]; then
     source $HOME/.aliases-local
 fi
 
-# $SHELL is the default login shell, which on some machines is /bin/bash and
-# doesn't change even if I start zsh.
-if [ -n $ZSH_NAME ]; then
-    source $HOME/.aliases-zsh
-    alias help=run-help
-fi
-
-alias fuck='$(thefuck $(fc -ln -1))'
-alias argh=fuck
-alias asdf=fuck
-export THEFUCK_REQUIRE_CONFIRMATION=true
+alias ding="echo -ne '\a'"
 
 # System tools
 alias dmt='dmesg | tail -n 20'
 alias goodbye='sudo shutdown -h now'
 alias jl='jobs -l'
 alias sc='systemctl'
+alias ssc='sudo systemctl'
+alias jc='journalctl'
+alias sjc='sudo journalctl'
 alias m='mount | column -t'
 alias sm='sudo mount -v'
 alias um='sudo umount -v'
-alias ssc='sudo systemctl'
 alias sv='sudo rvim'
 alias svim='sudo rvim'
 alias dix='dig -x'
+alias perms='stat -c "%A %a %n"'
 alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
 alias hogcpu='ps auxk -%cpu'
 alias hogram='ps auxk -%mem'
 # http://0pointer.de/blog/projects/systemd-for-admins-2.html
 alias psc='ps xawf -eo pid,user,cgroup,args' 
+alias sizereport='du -hd1 2> /dev/null | sort -h > sizereport.txt'
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'
@@ -94,12 +88,5 @@ alias u1='du -chd 1'
 # Miscellanea
 alias g=hub
 alias t=todo
-alias rdp='rdesktop -u administrator'
 alias tarhelp='tar --help | less'
 alias screenshot=scrot
-wc-r () { # wc if it had a recursive flag. 
-    # FIXME: Breaks with spaced filenames
-    find "$@" -type f | xargs wc -l
-    # Or this:
-    # find "$@" -print0 | wc -l --files0-from=-
-}
