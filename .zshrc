@@ -12,12 +12,12 @@ HISTSIZE=10000
 bindkey -e
 
 source ~/.aliases
-source ~/.zsh_aliases
 source ~/.zsh_keymap
 source ~/.zsh_local
 
 # Source prompt only in interactive sessions.
 [[ $- = *i* ]] && source ~/.zsh_prompt
+[[ $- = *i* ]] && source ~/.zsh_aliases
 
 setopt autocd nobeep notify correct noglobdots longlistjobs
 export EDITOR=vim
