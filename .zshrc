@@ -20,7 +20,7 @@ source ~/.zsh_local
 [[ $- = *i* ]] && source ~/.zsh_aliases
 
 setopt autocd nobeep notify correct noglobdots longlistjobs
+[[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
 export EDITOR=vim
 export BROWSER=firefox:lynx
 export PATH="$PATH:$HOME/bin"
-[[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
