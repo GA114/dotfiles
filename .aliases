@@ -12,9 +12,12 @@ if [ -r $HOME/.aliases-local ]; then
     source $HOME/.aliases-local
 fi
 
-alias ding="echo -ne '\a'"
+alias bell="echo -ne '\a'"
+
+alias itiof="dig +short -t txt istheinternetonfire.com"
 
 # System tools
+alias chmox='chmod +x'
 alias dmt='dmesg | tail -n 20'
 alias goodbye='sudo shutdown -h now'
 alias jl='jobs -l'
@@ -34,7 +37,7 @@ alias hogcpu='ps auxk -%cpu'
 alias hogram='ps auxk -%mem'
 # http://0pointer.de/blog/projects/systemd-for-admins-2.html
 alias psc='ps xawf -eo pid,user,cgroup,args' 
-alias sizereport='du -hd1 2> /dev/null | sort -h > sizereport.txt'
+alias sizereport='du -hd1 2> /dev/null | sort -h'
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'
@@ -59,6 +62,9 @@ retitle() {
     echo -n "\033]0;$1\007";
     echo "Terminal window renamed to $1."
 }
+
+# https://pthree.org/2011/10/18/use-wget1-to-expand-shortened-urls/
+expandurl() { wget -S $1 2>&1 | grep --color=never ^Location; }
 
 # I like my lists pretty
 alias l='ls -F --color'
@@ -87,6 +93,7 @@ alias u1='du -chd 1'
 
 # Miscellanea
 alias g=hub
-alias t=todo
+alias t=todo.sh
+alias slideshow='feh -dFrSfilename'
 alias tarhelp='tar --help | less'
 alias screenshot=scrot

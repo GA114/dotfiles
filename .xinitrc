@@ -13,6 +13,7 @@ fi
 
 # Zap X if it misbehaves with Ctrl-Alt-Bksp
 setxkbmap -option terminate:ctrl_alt_bksp
+setxkbmap -variant altgr-intl
 
 xmodmap ~/.xmodmaprc
 

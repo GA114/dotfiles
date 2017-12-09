@@ -15,6 +15,7 @@ order += "wireless wlp2s0"
 order += "ethernet eno1"
 order += "volume master"
 order += "battery 0"
+order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
 
@@ -52,3 +53,9 @@ load {
     format = "%1min, %5min, %15min"
     max_threshold = 4
 }
+cpu_temperature 0 {
+    format = "i5-520M: %degrees °C"
+    max_threshold = 95
+    path = "/sys/class/hwmon/hwmon0/temp1_input"
+}
+

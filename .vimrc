@@ -19,7 +19,6 @@ filetype plugin indent on    " required
 
 map <C-n> :NERDTreeToggle<CR>
 
-
 syntax on
 colo peachpuff
 scriptencoding utf-8
@@ -43,7 +42,6 @@ command Q q
 " Highlight eighty-first column of text
 highlight ColorColumn ctermbg=magenta
 command PP call matchadd('ColorColumn', '\%82v', 100)
-call matchadd('ColorColumn', '\%82v', 100)
 command P call clearmatches()
 
 " Tab settings
