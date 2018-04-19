@@ -3,15 +3,6 @@
 # Editing this file. TODO: visudo-like capability?
 alias aliases='vim $HOME/.aliases && source $HOME/.aliases && echo "Good to go."'
 
-# Distro- and machine-specific aliases, the former of which
-# dotfiles_import.sh should have copied to $HOME.
-if [ -r $HOME/.aliases-dist ]; then
-    source $HOME/.aliases-dist
-fi
-if [ -r $HOME/.aliases-local ]; then
-    source $HOME/.aliases-local
-fi
-
 alias bell="echo -ne '\a'"
 alias ding=bell
 
@@ -101,3 +92,14 @@ alias screenshot=scrot
 
 # Other stuff
 alias datehelp='for F in {a..z} {A..Z} :z ::z :::z;do echo $F: $(date +%$F);done|sed "/:[\ \t\n]*$/d;/%[a-zA-Z]/d"'
+
+# Distro- and machine-specific aliases, the former of which
+# dotfiles_import.sh should have copied to $HOME.
+# These should override my standard set of aliases, so they're down here.
+if [ -r $HOME/.aliases-dist ]; then
+    source $HOME/.aliases-dist
+fi
+if [ -r $HOME/.aliases-local ]; then
+    source $HOME/.aliases-local
+fi
+
