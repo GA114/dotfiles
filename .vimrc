@@ -24,6 +24,7 @@ syntax on
 colo peachpuff
 scriptencoding utf-8
 set mouse=a
+set noswapfile
 set backspace=indent,eol,start  " more powerful backspacing
 set nocompatible
 set ruler                       " show the cursor position all the time
@@ -31,7 +32,7 @@ set shell=zsh\ -l
 set modeline
 set modelines=3
 set encoding=utf-8
-set number
+set nonumber
 set nohlsearch
 
 " Shift key compensation
@@ -42,9 +43,9 @@ command Q q
 
 " Highlight eighty-first column of text
 highlight ColorColumn ctermbg=magenta
-command PP call matchadd('ColorColumn', '\%82v', 100)
-call matchadd('ColorColumn', '\%82v', 100)
-command P call clearmatches()
+command P call matchadd('ColorColumn', '\%82v', 100)
+command PP call clearmatches()
+" call matchadd('ColorColumn', '\%82v', 100)
 
 " Tab settings
 set shiftwidth=4

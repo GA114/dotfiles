@@ -23,4 +23,5 @@ setopt autocd nobeep notify correct noglobdots longlistjobs
 [[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
 export EDITOR=vim
 export BROWSER=firefox:lynx
-export PATH="$PATH:$HOME/bin"
+
+source ~/.xsh
