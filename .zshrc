@@ -19,9 +19,11 @@ source ~/.zsh_local
 [[ $- = *i* ]] && source ~/.zsh_prompt
 [[ $- = *i* ]] && source ~/.zsh_aliases
 
-setopt autocd nobeep notify correct noglobdots longlistjobs
 [[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
+
+setopt autocd nobeep notify correct noglobdots longlistjobs interactivecomments
 export EDITOR=vim
 export BROWSER=firefox:lynx
 
-source ~/.xsh
+export LYNX_CFG=$HOME/.lynxcfg
+export PATH="$PATH:$HOME/bin"

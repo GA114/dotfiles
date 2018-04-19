@@ -9,7 +9,6 @@ update () {
 alias ycu='yum check-update'
 alias syi='sudo yum install'
 alias yp='yum provides'
-alias ypw='yum provides $(which $1)'
 alias syr='sudo yum remove'
 alias ys='yum search'
 alias syu='sudo yum update'
