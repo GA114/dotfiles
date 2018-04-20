@@ -3,16 +3,8 @@
 # Editing this file. TODO: visudo-like capability?
 alias aliases='vim $HOME/.aliases && source $HOME/.aliases && echo "Good to go."'
 
-# Distro- and machine-specific aliases, the former of which
-# dotfiles_import.sh should have copied to $HOME.
-if [ -r $HOME/.aliases-dist ]; then
-    source $HOME/.aliases-dist
-fi
-if [ -r $HOME/.aliases-local ]; then
-    source $HOME/.aliases-local
-fi
-
 alias bell="echo -ne '\a'"
+alias ding=bell
 
 # Internet things
 alias itiof="dig +short -t txt istheinternetonfire.com"
@@ -24,10 +16,6 @@ alias chmox='chmod +x'
 alias dmt='dmesg | tail -n 20'
 alias goodbye='sudo shutdown -h now'
 alias jl='jobs -l'
-alias sc='systemctl'
-alias ssc='sudo systemctl'
-alias jc='journalctl'
-alias sjc='sudo journalctl'
 alias m='mount | column -t'
 alias sm='sudo mount -v'
 alias um='sudo umount -v'
@@ -38,9 +26,13 @@ alias perms='stat -c "%A %a %n"'
 alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
 alias hogcpu='ps auxk -%cpu'
 alias hogram='ps auxk -%mem'
-# http://0pointer.de/blog/projects/systemd-for-admins-2.html
-alias psc='ps xawf -eo pid,user,cgroup,args' 
 alias sizereport='du -hd1 2> /dev/null | sort -h'
+
+# shitstemd
+alias sc='systemctl'
+alias ssc='sudo systemctl'
+alias jc='journalctl'
+alias sjc='sudo journalctl'
 
 # Safety nets
 alias chgrp='chgrp -v --preserve-root'
@@ -100,3 +92,17 @@ alias t=todo.sh
 alias slideshow='feh -dFrSfilename'
 alias tarhelp='tar --help | less'
 alias screenshot=scrot
+
+# Other stuff
+alias datehelp='for F in {a..z} {A..Z} :z ::z :::z;do echo $F: $(date +%$F);done|sed "/:[\ \t\n]*$/d;/%[a-zA-Z]/d"'
+
+# Distro- and machine-specific aliases, the former of which
+# dotfiles_import.sh should have copied to $HOME.
+# These should override my standard set of aliases, so they're down here.
+if [ -r $HOME/.aliases-dist ]; then
+    source $HOME/.aliases-dist
+fi
+if [ -r $HOME/.aliases-local ]; then
+    source $HOME/.aliases-local
+fi
+

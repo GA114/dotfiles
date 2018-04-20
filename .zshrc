@@ -13,16 +13,18 @@ bindkey -e
 
 source ~/.aliases
 source ~/.zsh_keymap
-source ~/.zsh_local
 
 # Source prompt only in interactive sessions.
 [[ $- = *i* ]] && source ~/.zsh_prompt
 [[ $- = *i* ]] && source ~/.zsh_aliases
+
+source ~/.zsh_local
 
 [[ -f $HOME/.dircolors ]] &&  eval $(dircolors -b $HOME/.dircolors)
 
 setopt autocd nobeep notify correct noglobdots longlistjobs interactivecomments
 export EDITOR=vim
 export BROWSER=firefox:lynx
+
 export LYNX_CFG=$HOME/.lynxcfg
 export PATH="$PATH:$HOME/bin"
