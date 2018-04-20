@@ -14,7 +14,10 @@ fi
 
 alias bell="echo -ne '\a'"
 
+# Internet things
 alias itiof="dig +short -t txt istheinternetonfire.com"
+alias ipv4='curl -4 canhazip.com'
+alias ipv6='curl -6 canhazip.com'
 
 # System tools
 alias chmox='chmod +x'

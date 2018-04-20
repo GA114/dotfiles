@@ -21,7 +21,7 @@ ln -vs $HOME/dotfiles/.gitignore_global $HOME
 ln -vs $HOME/dotfiles/.gitconfig $HOME
 
 # Sometimes I have to force names: "NAME=Fedora ./dotfiles/dotfiles_import.sh"
-if [ -z "$NAME" ]; then  
+if [ ! "$NAME" ]; then
     source /etc/os-release 2>/dev/null
     if [ $? != 0 ] ; then 
         NAME=$(uname -a)
@@ -29,7 +29,7 @@ if [ -z "$NAME" ]; then
 fi
 
 case "$NAME" in
-    *Debian* | *Ubuntu*)
+    *bian* | *Ubuntu*)
         echo "DETECTED: Debian or similar."
         DIST='deb'
         ;;
