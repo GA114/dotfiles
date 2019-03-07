@@ -11,7 +11,14 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ntpeters/vim-better-whitespace'
+" TODO: gracefully degrade airline on unsupported platforms
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -31,8 +38,11 @@ set shell=zsh\ -l
 set modeline
 set modelines=3
 set encoding=utf-8
-set number
 set nohlsearch
+
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:airline_solarized_bg='dark'
 
 " Shift key compensation
 command WQ wq
@@ -40,12 +50,10 @@ command Wq wq
 command W w
 command Q q
 
-" Highlight eighty-first column of text
-highlight ColorColumn ctermbg=magenta
-command PP call matchadd('ColorColumn', '\%82v', 100)
-command P call clearmatches()
-
-" Tab settings
-set shiftwidth=4
-set tabstop=4
-set expandtab
+" https://thoughtbot.com/blog/faster-grepping-in-vim
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  nnoremap \ :Ag<SPACE>
+endif
