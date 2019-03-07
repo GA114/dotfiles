@@ -5,7 +5,7 @@
 *.exe
 *.o
 *.so
- 
+
 # Packages
 *.7z
 *.dmg
@@ -15,12 +15,12 @@
 *.rar
 *.tar
 *.zip
- 
+
 # Logs and databases
 *.log
 *.sql
 *.sqlite
- 
+
 # OS generated files
 .DS_Store
 .DS_Store?

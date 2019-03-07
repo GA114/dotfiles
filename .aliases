@@ -64,7 +64,7 @@ expandurl() { wget -S $1 2>&1 | grep --color=never ^Location; }
 # I like my lists pretty
 alias l='ls -F --color'
 alias la='l -A'        # omits implicit "." and ".."
-alias ll='l -lh'       # long list, human readable sizes 
+alias ll='l -lh'       # long list, human readable sizes
 alias lla='l -Alh'     # long list, human readable sizes, dotfiles
 alias lr='l -R'        # recursive list
 alias lsdir='ls -F | grep / --color=never' # ls dirs
@@ -83,7 +83,7 @@ alias sgrep='grep -RnHC 5 --exclude-dir={.git,.svn,CVS}'
 alias f='df -HT'  # Sizes in SI units (MB, etc.) plus fstype
 alias u='du -ch'
     # Total at bottom, SI units
-alias u1='du -chd 1' 
+alias u1='du -chd 1'
     # Total at bottom, SI units, group by folder
 
 # Miscellanea
