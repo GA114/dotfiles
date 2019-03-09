@@ -1,16 +1,41 @@
 # vim: set ft=sh:
-# TODO
-# Git status, branch
 
-# All syntax here explained in chapter 13 of the zsh manual.
-# http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+function powerline_precmd() {
+    # (modules: aws, cwd, docker, dotenv, duration, exit, git, gitlite, hg,
+    # host, jobs, kube, load, newline, nix-shell, node, perlbrew, perms, root,
+    # shell-var, ssh, svn, termtitle, terraform-workspace, time, user, venv,
+    # vgo)
+    # (default "nix-shell,venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root,vgo")
+    EXIT="$?"
+    MODULES="venv,ssh,cwd,perms,git,hg,jobs,exit,root,vgo"
+    PS1="$($GOPATH/bin/powerline-go -modules $MODULES -shell zsh -theme solarized-dark16 -error $EXIT)"
+}
 
-# Thanks to oh-my-zsh/themes/gallifrey for return code idea.
-local return_code="%(?..%F{red}%?%f)"
-local hostname="%F{green}%m%f"
-# Time, directory, background jobs.
-local stats="%T %F{yellow}%~%f%F{blue}%1(j. %j.)%f"
-# Red hash if uid=0, foreground-color percent otherwise.
-local root_status="%(!.%F{red}#%f.%%)"
+function powerline() {
+  # https://github.com/justjanne/powerline-go#zsh
+  [ "$TERM" != "linux" ] || return
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
 
-PROMPT="${hostname} [${stats} ${return_code}] ${root_status} "
+function nopowerline() {
+  # All syntax here explained in chapter 13 of the zsh manual.
+  # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+  # Thanks to oh-my-zsh/themes/gallifrey for return code idea.
+  local return_code="%(?.. %F{red}%?%f)"
+  local hostname="%F{green}%m%f"
+  local stats="%F{yellow}%~%f%F{blue}%1(j. %j.)%f"
+  local root_status="%(!.%F{red}#%f.%%)"
+
+  unset precmd_functions PS1
+  export PS1="${stats}${return_code} ${root_status} "
+}
+
+alias pl=powerline
+alias nopl=nopowerline
+
+powerline

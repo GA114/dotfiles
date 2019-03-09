@@ -16,6 +16,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'altercation/vim-colors-solarized'
 " TODO: gracefully degrade airline on unsupported platforms
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -30,7 +31,9 @@ set directory=~/.vim/tmp
 map <C-n> :NERDTreeToggle<CR>
 
 syntax on
-colo peachpuff
+set background=dark
+colorscheme solarized
+
 scriptencoding utf-8
 set mouse=a
 set backspace=indent,eol,start  " more powerful backspacing
@@ -41,6 +44,7 @@ set modeline
 set modelines=3
 set encoding=utf-8
 set nohlsearch
+set inccommand=nosplit
 
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
@@ -57,5 +61,5 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-  nnoremap \ :Ag<SPACE>
+  nnoremap <leader>] :Ag<SPACE>
 endif
