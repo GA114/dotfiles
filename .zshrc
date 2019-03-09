@@ -1,4 +1,4 @@
-# vim: set ft=zsh:
+# vim: set ft=zsh sw=2 ts=2 sts=2 et ai:
 
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' group-name ''
@@ -6,7 +6,11 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BNo matches for: %d%b'
 autoload -Uz compinit
 # Only regen zcompdump once daily; new shells hideously slow to load otherwise.
-[ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ] && compinit || compinit -C
+if [[ "$(uname)" == "darwin" ]]; then
+  [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ] && compinit || compinit -C
+elif [[ "$(uname)" == "Linux" ]]; then
+  [ $(date +'%F') != $(stat -c '%y' ~/.zcompdump | cut -d' ' -f1) ] && compinit || compinit -C
+fi
 
 # Apparently ^X^E isn't standard like in Bash...
 # ...also, yes, I edit in Vi but use Emacs movements in the shell.
@@ -22,7 +26,7 @@ HISTSIZE=10000
 bindkey -e
 
 setopt autocd nobeep notify correct noglobdots longlistjobs interactivecomments
-export EDITOR=vim
+export EDITOR=nvim
 
 # TODO: don't source if nonexistent (abstract into function?)
 

@@ -1,8 +1,5 @@
 # vim: set ft=sh et:
 
-# Editing this file. TODO: visudo-like capability?
-alias aliases='vim $HOME/.aliases && source $HOME/.aliases && echo "Good to go."'
-
 alias bell="echo -ne '\a'"
 alias ding=bell
 
@@ -19,7 +16,7 @@ alias jl='jobs -l'
 alias m='mount | column -t'
 alias sm='sudo mount -v'
 alias um='sudo umount -v'
-alias svim='sudo rvim'
+alias svim='sudo vim -Z'
 alias dix='dig -x'
 alias perms='stat -c "%A %a %n"'
 alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
