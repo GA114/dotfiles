@@ -1,7 +1,7 @@
 # vim: set ft=conf:
 
 update () {
-    sudo yum clean all && sudo yum update && date  > ~/.lastupdate
+    sudo yum update && date  > ~/.lastupdate
 }
 
 # Thanks,

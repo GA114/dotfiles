@@ -19,6 +19,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 " TODO: gracefully degrade airline on unsupported platforms
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rodjek/vim-puppet'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on    " required

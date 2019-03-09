@@ -1,5 +1,6 @@
 dotfiles
 ========
-Some dotfiles. Not the fanciest. They get the job one.
+Some dotfiles. Abandon hope, all ye who enter here.
 
-Input always appreciated.
+The image file here is from:
+https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html

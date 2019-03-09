@@ -13,5 +13,4 @@ local stats="%T %F{yellow}%~%f%F{blue}%1(j. %j.)%f"
 # Red hash if uid=0, foreground-color percent otherwise.
 local root_status="%(!.%F{red}#%f.%%)"
 
-PROMPT="${hostname} [${stats}] ${root_status} "
-RPROMPT="${return_code}"
+PROMPT="${hostname} [${stats} ${return_code}] ${root_status} "
