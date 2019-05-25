@@ -9,7 +9,7 @@ alias ipv4='curl -4 canhazip.com'
 alias ipv6='curl -6 canhazip.com'
 
 # System tools
-alias chmox='chmod +x'
+alias chmox='chmod u+x'
 alias dmt='dmesg | tail -n 20'
 alias goodbye='sudo shutdown -h now'
 alias jl='jobs -l'

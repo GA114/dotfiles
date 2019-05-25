@@ -7,7 +7,7 @@ function powerline_precmd() {
     # vgo)
     # (default "nix-shell,venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root,vgo")
     EXIT="$?"
-    MODULES="venv,ssh,cwd,perms,git,hg,jobs,exit,root,vgo"
+    MODULES="host,cwd,perms,git,hg,jobs,exit,venv,root,vgo"
     PS1="$($GOPATH/bin/powerline-go -modules $MODULES -shell zsh -theme solarized-dark16 -error $EXIT)"
 }
 
