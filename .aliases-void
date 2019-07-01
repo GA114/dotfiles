@@ -6,4 +6,5 @@ update () {
 
 alias Rs='xbps-query -Rs'
 alias sxi='sudo xbps-install'
+alias sxr='sudo xbps-remove -R'
 alias ssv='sudo sv'

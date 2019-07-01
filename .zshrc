@@ -32,14 +32,13 @@ HISTSIZE=10000
 
 bindkey -e
 
-setopt autocd nobeep notify correct noglobdots longlistjobs interactivecomments
+setopt autocd nobeep notify correct noglobdots longlistjobs interactivecomments histignorespace
 export EDITOR=nvim
 
 # TODO: don't source if nonexistent (abstract into function?)
 
 # Source prompt only in interactive sessions.
-[[ $- = *i* ]] && source ~/.zsh_prompt
-[[ $- = *i* ]] && source ~/.zsh_aliases
+[[ $- = *i* ]] && source ~/.zsh_prompt && source ~/.zsh_aliases
 
 source_if_file () {
   [[ -f $1 ]] && source $1

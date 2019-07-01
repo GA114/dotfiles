@@ -6,22 +6,26 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Essentials
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'altercation/vim-colors-solarized'
+" TODO: Why do I have both of these?
+Plugin 'tpope/vim-commentary'
+Plugin 'scrooloose/nerdcommenter'
+" Language-specific
+Plugin 'rodjek/vim-puppet'
+Plugin 'fatih/vim-go'
+Plugin 'mattn/emmet-vim'
+Plugin 'rust-lang/rust.vim'
 " TODO: gracefully degrade airline on unsupported platforms
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rodjek/vim-puppet'
-Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on    " required
