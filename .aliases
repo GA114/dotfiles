@@ -83,11 +83,10 @@ alias u1='du -chd 1'
     # Total at bottom, SI units, group by folder
 
 # Miscellanea
-alias g=hub
-alias t=todo.sh
 alias slideshow='feh -dFrSfilename'
 alias tarhelp='tar --help | less'
 alias screenshot=scrot
+alias sshtemp='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Other stuff
 alias datehelp='for F in {a..z} {A..Z} :z ::z :::z;do echo $F: $(date +%$F);done|sed "/:[\ \t\n]*$/d;/%[a-zA-Z]/d"'
@@ -101,4 +100,3 @@ fi
 if [ -r $HOME/.aliases-local ]; then
     source $HOME/.aliases-local
 fi
-

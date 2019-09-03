@@ -23,6 +23,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 Plugin 'mattn/emmet-vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'hashivim/vim-terraform'
 " TODO: gracefully degrade airline on unsupported platforms
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -40,6 +41,7 @@ colorscheme solarized
 
 scriptencoding utf-8
 set mouse=a
+set backupdir=~/.vim/tmp
 set backspace=indent,eol,start  " more powerful backspacing
 set nocompatible
 set ruler                       " show the cursor position all the time
@@ -67,3 +69,6 @@ if executable('ag')
   nnoremap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
   nnoremap <leader>] :Ag<SPACE>
 endif
+
+" `vagrant init -m` doesn't come with modelines
+autocmd BufRead,BufNewFile Vagrantfile set ft=ruby
