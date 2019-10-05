@@ -1,6 +1,7 @@
 [user]
     name = Antonio Gurgel
     email = antonio@goorzhel.com
+    signingkey = 222E8DC40C171D68
 [color]
     ui = auto
 [push]
