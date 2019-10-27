@@ -10,18 +10,16 @@ alias ipv6='curl -6 canhazip.com'
 
 # System tools
 alias chmox='chmod u+x'
-alias dmt='dmesg | tail -n 20'
-alias goodbye='sudo shutdown -h now'
-alias jl='jobs -l'
 alias m='mount | column -t'
 alias sm='sudo mount -v'
+alias skgr='ssh-keygen -R'
 alias um='sudo umount -v'
 alias svim='sudo vim -Z'
 alias dix='dig -x'
 alias perms='stat -c "%A %a %n"'
 alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
-alias hogcpu='ps auxk -%cpu'
-alias hogram='ps auxk -%mem'
+alias cpuhogs='ps auxk -%cpu'
+alias ramhogs='ps auxk -%mem'
 alias sizereport='du -hd1 2> /dev/null | sort -h'
 
 # shitstemd
@@ -62,10 +60,6 @@ alias l='ls -F --color'
 alias la='l -A'        # omits implicit "." and ".."
 alias ll='l -lh'       # long list, human readable sizes
 alias lla='l -Alh'     # long list, human readable sizes, dotfiles
-alias lr='l -R'        # recursive list
-alias lsdir='ls -F | grep / --color=never' # ls dirs
-alias llf='ll | grep -v / --color=never'   # ls -l files
-alias lld='ll | grep / --color=never'      # ls -l dirs
 
 # I like my grep pretty
 alias grep='grep --color=auto'
@@ -85,14 +79,10 @@ alias u1='du -chd 1'
 # Miscellanea
 alias slideshow='feh -dFrSfilename'
 alias tarhelp='tar --help | less'
-alias screenshot=scrot
 alias sshtemp='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-
-# Other stuff
 alias datehelp='for F in {a..z} {A..Z} :z ::z :::z;do echo $F: $(date +%$F);done|sed "/:[\ \t\n]*$/d;/%[a-zA-Z]/d"'
 
-# Distro- and machine-specific aliases, the former of which
-# dotfiles_import.sh should have copied to $HOME.
+# Distro- and machine-specific aliases.
 # These should override my standard set of aliases, so they're down here.
 if [ -r $HOME/.aliases-dist ]; then
     source $HOME/.aliases-dist
