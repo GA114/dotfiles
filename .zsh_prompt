@@ -37,5 +37,3 @@ function nopowerline() {
 
 alias pl=powerline
 alias nopl=nopowerline
-
-powerline

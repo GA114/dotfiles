@@ -20,7 +20,9 @@ alias perms='stat -c "%A %a %n"'
 alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
 alias cpuhogs='ps auxk -%cpu'
 alias ramhogs='ps auxk -%mem'
-alias sizereport='du -hd1 2> /dev/null | sort -h'
+sizereport() {
+  du -hd1 "$@" | sort -h
+}
 
 # shitstemd
 alias sc='systemctl'
