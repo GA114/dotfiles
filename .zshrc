@@ -26,13 +26,6 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
-# Apparently ^X^E isn't standard like in Bash...
-# ...also, yes, I edit in Vi but use Emacs movements in the shell.
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
-
 HISTFILE=$HOME/.zsh_hist
 SAVEHIST=10000
 HISTSIZE=10000

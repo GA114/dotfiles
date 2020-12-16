@@ -14,27 +14,17 @@ set $ensi exec --no-startup-id
 # is used in the bar {} block below.
 font pango:Icons 8, Terminus 8
 
-# AUTOSTART TODO: should this be in i3 or in xinitrc?
-$ensi urxvtd
-$ensi syndaemon -i .15 -d
-$ensi parcellite
-
-# F-KEY SHORTCUTS
-bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec chromium
-bindsym $mod+F4 exec keepass
-
 # Toggle bar visibility (M-b clobbers readline)
 bindsym $mod+a bar mode toggle
 
 # Use Mouse1+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec kitty
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d $ensi dmenu_run -b
+bindsym $mod+d $ensi rofi -show run
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down

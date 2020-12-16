@@ -2,6 +2,11 @@
     name = Antonio Gurgel
     email = antonio@goorzhel.com
     signingkey = 222E8DC40C171D68
+[sendemail]
+    smtpserver = smtp.fastmail.com
+    smtpuser = antonio@goorzhel.com
+    smtpencryption = tls
+    smtpserverport = 587
 [color]
     ui = auto
 [push]
@@ -35,3 +40,7 @@
     excludesfile = ~/.gitignore_global
 [github]
     user = Goorzhel
+[pull]
+    rebase = true
+[include]
+    path = ~/.gitconfig.local

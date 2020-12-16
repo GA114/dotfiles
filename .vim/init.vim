@@ -36,7 +36,11 @@ set directory=~/.vim/tmp
 map <C-n> :NERDTreeToggle<CR>
 
 syntax on
-set background=dark
+"set background=dark
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:solarized_termtrans = 1
+"let g:airline_solarized_bg='dark'
 colorscheme solarized
 
 scriptencoding utf-8
@@ -52,9 +56,6 @@ set encoding=utf-8
 set nohlsearch
 set inccommand=nosplit
 
-let g:airline_theme='solarized'
-let g:airline_powerline_fonts = 1
-let g:airline_solarized_bg='dark'
 
 " Shift key compensation
 command WQ wq
