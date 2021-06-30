@@ -14,7 +14,7 @@ alias m='mount | column -t'
 alias sm='sudo mount -v'
 alias skgr='ssh-keygen -R'
 alias um='sudo umount -v'
-alias svim='sudo vim -Z'
+alias svim='sudo -H vim -Z'
 alias dix='dig -x'
 alias perms='stat -c "%A %a %n"'
 alias sumitup='nice find . -type f -not -name md5sum  -exec md5sum  {} \; > md5sums &'
@@ -83,6 +83,7 @@ alias slideshow='feh -dFrSfilename'
 alias tarhelp='tar --help | less'
 alias sshtemp='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias datehelp='for F in {a..z} {A..Z} :z ::z :::z;do echo $F: $(date +%$F);done|sed "/:[\ \t\n]*$/d;/%[a-zA-Z]/d"'
+alias chop_config='sed -E "/^([[:space:]]+)?#/d;/^([[:space:]]+)?$/d;"' # delete comment lines, then blank lines
 
 # Distro- and machine-specific aliases.
 # These should override my standard set of aliases, so they're down here.
